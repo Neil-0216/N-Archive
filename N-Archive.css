@@ -1,144 +1,215 @@
-*{
-
-margin: 0;
-padding: 0;
-background-color:rgb(36, 35, 35);
-font-family: sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better sizing calculations */
+    background-color: rgb(36, 35, 35);
+    font-family: sans-serif;
 }
-body{
+
+body {
     display: flex;
-    flex-wrap:wrap ;
     flex-direction: column;
-    }
-.navbar{
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Header/Navbar Styles */
+.navbar {
     border: 10px;
     margin: 10px;
     padding: 10px;
 }
 
-    
-
-.navlinks{
+.navlinks {
     list-style: none;
-
+    display: flex; /* Added for better mobile handling */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items on mobile */
 }
-li,a{
+
+li, a {
     font-family: sans-serif;
     font-weight: 500;
     font-size: 20px;
-    color:gold;
-    border-collapse: collapse;
+    color: gold;
     text-decoration: none;
-
+    padding: 5px 10px; /* Adjusted padding for mobile */
 }
-header{
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
-    border-collapse: collapse ;
-    padding: 10px;
-    display: flex;
+    padding: 15px 5%; /* Reduced padding for mobile */
     flex-wrap: wrap;
-
 }
-.logo{
+
+.logo {
     cursor: pointer;
-    height:20%;
-    width: 10%;
-    align-items: start;
+    height: auto; /* Changed to auto for better scaling */
+    width: 80px; /* Fixed smaller size for mobile */
     border-radius: 10px;
-  
-   
+    margin-bottom: 10px; /* Added space between logo and nav */
+}
 
-    
-}
-.navlinks li{
+.navlinks li {
     display: inline-block;
-    padding: 0px 10px;
+    padding: 5px; /* Reduced padding for mobile */
 }
-.navlinks li a{
+
+.navlinks li a {
     transition: all 0.3s ease 0s;
 }
-.navlinks li a:hover{
+
+.navlinks li a:hover {
     color: rgb(216, 155, 0);
 }
-.center{
+
+/* Main Content Styles */
+.center {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    height: 500px;
+    min-height: 300px; /* Reduced height for mobile */
     width: 100%;
     align-items: center;
     gap: 10px;
+    padding: 20px; /* Added padding for mobile */
 }
 
-.welcome{
+.welcome {
     font-family: fantasy;
-    font-size: 50px;
+    font-size: 2rem; /* Changed to rem for better scaling */
     color: goldenrod;
-   
-    justify-content: center;
-    align-items: center;
+    text-align: center; /* Center text on mobile */
+    padding: 0 15px; /* Added padding for mobile */
 }
-.bottom{
+
+/* Card Styles */
+.bottom {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    height: 500px;
+    min-height: auto; /* Changed from fixed height */
     width: 100%;
     align-items: center;
     gap: 10px;
+    padding: 20px 0; /* Added padding */
 }
-.card-container{
+
+.card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 50px; /* Reduced margin for mobile */
+    padding: 0 15px; /* Added padding for mobile */
 }
-.card{
-    width: 700px;
+
+.card {
+    width: 100%; /* Full width on mobile */
+    max-width: 700px; /* But no larger than 700px */
     background-color: rgb(218, 165, 32);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 2px 4px rgb(0,0,0,0.2) ;
-    margin: 20px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 10px; /* Reduced margin for mobile */
     color: white;
-    font-size: 20px;
+    font-size: 1rem; /* Changed to rem */
+}
 
+.card img {
+    height: auto; /* Changed to auto for aspect ratio */
+    width: 100%; /* Full width of card */
+    max-height: 300px; /* Limit height on mobile */
+    object-fit: cover; /* Ensure images cover area properly */
 }
-.card img{
-    height: 500px;
-    width: 700px;
+
+.card-content {
+    padding: 15px; /* Added padding for mobile */
 }
-.card-content h3{
-    font-size: 28px;
+
+.card-content h3 {
+    font-size: 1.5rem; /* Changed to rem */
     margin-bottom: 8px;
+}
 
-}
-.about{
+/* About Section Styles */
+.about {
     overflow: hidden;
+    padding: 20px; /* Added padding for mobile */
 }
-.about-heading h1{
+
+.about-heading h1 {
     color: goldenrod;
-    font-size: 55px;
+    font-size: 2.2rem; /* Changed to rem */
     text-align: center;
-    margin-top: 35px;
+    margin-top: 20px; /* Reduced margin for mobile */
+    margin-bottom: 20px;
 }
-.about-container{
+
+.about-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 65px auto;
+    margin: 30px auto; /* Reduced margin for mobile */
     flex-wrap: wrap;
+    padding: 0 15px; /* Added padding for mobile */
 }
-.about-content{
-flex: 1;
-width: 600px;
-margin: 0px 25px;
-align-items: center;
-color: rgb(209, 180, 108);
+
+.about-content {
+    flex: 1 1 100%; /* Full width on mobile */
+    max-width: 600px;
+    margin: 0px 15px; /* Reduced margin for mobile */
+    color: rgb(209, 180, 108);
+    text-align: center; /* Center text on mobile */
+    padding: 0 10px; /* Added padding for mobile */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .navlinks {
+        width: 100%;
+        justify-content: space-around; /* Evenly space nav items */
+    }
+    
+    .welcome {
+        font-size: 1.8rem; /* Slightly smaller on tablets */
+    }
+    
+    .about-heading h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navlinks li {
+        padding: 5px 8px; /* Smaller padding for very small screens */
+    }
+    
+    li, a {
+        font-size: 16px; /* Smaller font for mobile */
+    }
+    
+    .welcome {
+        font-size: 1.5rem;
+    }
+    
+    .about-heading h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        margin: 10px 0; /* Remove horizontal margin on very small screens */
+    }
 }
