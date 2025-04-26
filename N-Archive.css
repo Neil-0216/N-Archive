@@ -45,11 +45,10 @@ header {
 .logo {
     cursor: pointer;
     height: auto;
-    width: 80px;
+    width: 120px; /* Increased from 80px to 120px */
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
 .navlinks li {
     display: inline-block;
     padding: 5px;
@@ -142,6 +141,7 @@ header {
     }
     
     .logo {
+        width: 100px;
         margin-bottom: 15px;
     }
     
@@ -178,5 +178,9 @@ header {
         transform: scale(1.02);
         box-shadow: 0 10px 20px rgba(218, 165, 32, 0.3);
     }
+
+        .logo {
+            width: 80px; 
+        }
     
 }
