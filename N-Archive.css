@@ -114,6 +114,10 @@ header {
     color: white;
     font-size: 1rem;
 }
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(218, 165, 32, 0.3);
+}
 
 .card img {
     height: auto;
@@ -129,38 +133,6 @@ header {
 .card-content h3 {
     font-size: 1.5rem;
     margin-bottom: 8px;
-}
-
-.about {
-    overflow: hidden;
-    padding: 20px;
-}
-
-.about-heading h1 {
-    color: goldenrod;
-    font-size: 2.2rem;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 30px auto;
-    flex-wrap: wrap;
-    padding: 0 15px;
-}
-
-.about-content {
-    flex: 1 1 100%;
-    max-width: 600px;
-    margin: 0px 15px;
-    color: rgb(209, 180, 108);
-    text-align: center;
-    padding: 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -199,10 +171,7 @@ header {
     .welcome {
         font-size: 1.5rem;
     }
-    
-    .about-heading h1 {
-        font-size: 1.8rem;
-    }
+
     
     .card {
         margin: 10px 0;
